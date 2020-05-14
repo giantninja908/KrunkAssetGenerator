@@ -1,7 +1,7 @@
-#Krunker Assets Generation Scripts
-##made by GNU/Ninja#7650
+# Krunker Assets Generation Scripts
+## made by GNU/Ninja#7650
 
-**P requisites**: Python3 must be installed on the users computer
+**Prequisites**: Python3 must be installed on the users computer
 **File Structure**: all folders provided are of the correct name, they are empty but once the script is run, they will fill up with the latest assets
 
 **How it works**: using a request python module, just brute forces through every assets by counting upwards
