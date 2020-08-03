@@ -39,6 +39,22 @@ for i in range(0,100):
                 file_ = open(filename, 'wb')
                 file_.write(content)
                 file_.close()
+
+                print("attempting emmisive...")
+                try:
+                    url = 'https://assets.krunker.io/textures/melee/melee_'+str(i)+'_e.png'
+                    req = Request(url)
+                    req.add_header('user-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.74 Safari/537.36')
+                    content = urlopen(req).read()
+
+                        # Write data to file
+                    filename = "melee/"+str(i)+"_e.png"
+                    file_ = open(filename, 'wb')
+                    file_.write(content)
+                    file_.close()
+                    print("success")
+                except Exception as e:
+                    print("fail")
             else:
                 
                 print("requesting png of others...")
@@ -64,6 +80,21 @@ for i in range(0,100):
                 file_.write(content)
                 file_.close()
 
+                print("attempting emmisive...")
+                try:
+                    url = 'https://assets.krunker.io/textures/melee/melee_'+str(i)+'_'+str(v-1)+'_e.png'
+                    req = Request(url)
+                    req.add_header('user-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.74 Safari/537.36')
+                    content = urlopen(req).read()
+
+                        # Write data to file
+                    filename = "melee/"+str(i)+'_'+str(v-1)+"_e.png"
+                    file_ = open(filename, 'wb')
+                    file_.write(content)
+                    file_.close()
+                    print("success")
+                except Exception as e:
+                    print("fail")
         except Exception as e:
             print(e)
             print(str(i)+'_'+str(v-1)+" is not a valid OBJ ID")

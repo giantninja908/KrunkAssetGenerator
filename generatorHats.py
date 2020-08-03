@@ -1,6 +1,6 @@
 from urllib.request import Request, urlopen
 
-for i in range(1,100):
+for i in range(1,400):
     for v in range(1,20):
         try:
             if v is 1:
@@ -39,6 +39,22 @@ for i in range(1,100):
                 file_ = open(filename, 'wb')
                 file_.write(content)
                 file_.close()
+
+                try:
+                    print("requesting em...")
+                    url = 'https://assets.krunker.io/textures/hats/hat_'+str(i)+'_e.png'
+                    req = Request(url)
+                    req.add_header('user-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.74 Safari/537.36')
+                    content = urlopen(req).read()
+
+                        # Write data to file
+                    filename = "hats/"+str(i)+"_e.png"
+                    file_ = open(filename, 'wb')
+                    file_.write(content)
+                    file_.close()
+                    print("success")
+                except Exception as e:
+                    print("fail")
             else:
                 
                 print("requesting png of others...")
@@ -63,6 +79,21 @@ for i in range(1,100):
                 file_ = open(filename, 'wb')
                 file_.write(content)
                 file_.close()
+                try:
+                    print("requesting em...")
+                    url = 'https://assets.krunker.io/textures/hats/hat_'+str(i)+'_'+str(v-1)+'_e.png'
+                    req = Request(url)
+                    req.add_header('user-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.74 Safari/537.36')
+                    content = urlopen(req).read()
+
+                        # Write data to file
+                    filename = "hats/"+str(i)+'_'+str(v-1)+"_e.png"
+                    file_ = open(filename, 'wb')
+                    file_.write(content)
+                    file_.close()
+                    print("success")
+                except Exception as e:
+                    print("fail")
 
         except Exception as e:
             print(e)
