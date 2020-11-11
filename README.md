@@ -38,4 +38,4 @@ python3 generatorWaist.py
 ```
 
 
-For any additional help, please consult GNU/Giant#7650 on discord
+For any additional help, please consult Giant#7650 on discord, by reaching out at the server https://discord.gg/an2AytE
